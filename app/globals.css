@@ -1,0 +1,38 @@
+:root {
+  --bg: #0e0f12;
+  --surface: #151821;
+  --surface-2: #1b1f2a;
+  --border: rgba(255,255,255,.08);
+  --text: #f7f2e8;
+  --muted: #b8b2a7;
+  --gold: #b9985a;
+  --gold-2: #dfc089;
+  --teal: #30545b;
+  --radius: 20px;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: radial-gradient(circle at top, rgba(185,152,90,.12), transparent 30%), var(--bg); color: var(--text); font-family: Inter, Arial, sans-serif; }
+a { color: inherit; text-decoration: none; }
+.container { width: min(1200px, calc(100% - 32px)); margin: 0 auto; }
+.hero { padding: 64px 0 24px; }
+.eyebrow { color: var(--gold-2); text-transform: uppercase; letter-spacing: .18em; font-size: 12px; }
+.hero h1 { font-size: clamp(40px, 8vw, 88px); line-height: .95; margin: 12px 0; max-width: 10ch; }
+.hero p { max-width: 60ch; color: var(--muted); font-size: 18px; }
+.panel { background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.02)); border: 1px solid var(--border); border-radius: var(--radius); backdrop-filter: blur(8px); }
+.filters { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 12px; padding: 18px; margin: 24px 0 32px; }
+.input, .select { width: 100%; background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px; }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px; padding-bottom: 64px; }
+.card { padding: 22px; min-height: 260px; display: flex; flex-direction: column; justify-content: space-between; }
+.card h3 { margin: 0 0 8px; font-size: 24px; }
+.card p { color: var(--muted); margin: 0 0 16px; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag { border: 1px solid var(--border); color: var(--gold-2); background: rgba(185,152,90,.08); padding: 6px 10px; border-radius: 999px; font-size: 12px; }
+.meta { display: flex; gap: 10px; flex-wrap: wrap; color: var(--muted); font-size: 13px; }
+.article { padding: 40px 0 80px; }
+.article h1 { font-size: clamp(36px, 6vw, 68px); margin-bottom: 8px; }
+.block { padding: 24px; margin-top: 18px; }
+pre { white-space: pre-wrap; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; line-height: 1.6; }
+.back { display: inline-block; margin-top: 24px; color: var(--gold-2); }
+code.inline { background: rgba(255,255,255,.06); padding: 3px 8px; border-radius: 8px; }
+@media (max-width: 960px) { .filters, .grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 640px) { .filters, .grid { grid-template-columns: 1fr; } .hero { padding-top: 40px; } }
